@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+
+# Training artifacts
+models/
+old_models/
+logs/
+logs copy/
+tb_logs/
+tb_anydir/
+tensorboard_logs/
+metrics/
+plots_run_002/
