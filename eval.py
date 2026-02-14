@@ -5,10 +5,10 @@ import time
 env = BaseWalkEnv(use_gui=True)  # uruchamia p.connect() i GUI wewnętrznie
 obs = env.reset()
 7
-model = PPO.load("models/alfa_17.zip")
+model = PPO.load("models/zero_y_reset_coef6_speed8_contact3_tilt10_q5_x.zip")
 
 for _ in range(1000):
-    action, _ = model.predict(obs)    
+    action, _ = model.predict(obs,deterministic=False)    
 
     obs, reward, done, info = env.step(action)
     time.sleep(1 / 240)

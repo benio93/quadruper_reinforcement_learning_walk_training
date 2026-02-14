@@ -98,7 +98,7 @@ model = PPO(
     
     clip_range=0.15,         # Jak bardzo nowa polityka może różnić się od starej. 0.1 = bardzo ostrożne zmiany.
     
-    ent_coef=0.01,          # KLUCZOWE NA SZURANIE: Entropia (eksploracja). 0.01-0.05. 
+    ent_coef=0.005,          # KLUCZOWE NA SZURANIE: Entropia (eksploracja). 0.01-0.05. 
                             # Zwiększ, jeśli robot "szura" i nie chce podnosić nóg. To zmusi go do testowania dziwnych ruchów.
                             
     vf_coef=0.5,            # Waga błędu funkcji wartości. Zazwyczaj zostawia się 0.5.
@@ -106,6 +106,6 @@ model = PPO(
     max_grad_norm=0.5       # Zapobiega "wybuchaniu" parametrów sieci. Standard to 0.5.
 )
 
-model.learn(total_timesteps=50_000, callback=InfoLoggerCallback("logs"))
-model.save("models/alfa")
+model.learn(total_timesteps=10_000, callback=InfoLoggerCallback("logs"))
+model.save("models/zero_y")
 env.close()
