@@ -275,7 +275,7 @@ def main(model_path: str, more_steps: int):
         "ent_coef": 0.001,
         "learning_rate": 0.00005,
         "gamma": 0.995,
-        "clip_range": 0.15,
+        "clip_range": 0.12,
 
         "n_steps": 2048,
         "batch_size": 64,
@@ -305,7 +305,7 @@ def main(model_path: str, more_steps: int):
         callback=InfoLoggerCallback("logs")
     )
 
-    new_save_path = "models/zero_y_reset_coef6_speed8_contact3_tilt10_q5_x2.zip"
+    new_save_path = "models/zero_y_reset_coef6_speed8_contact3_tilt10_q5_x5_epoch4_clip2.zip"
     os.makedirs("models", exist_ok=True)
     model.save(new_save_path)
     print(f"Saved updated model to: {new_save_path}")
@@ -315,7 +315,7 @@ def main(model_path: str, more_steps: int):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Continue training quad robot")
-    parser.add_argument("--model_path", type=str, default="models/zero_y_reset_coef6_speed8_contact3_tilt10_q5_x.zip", help="Path to the model .zip file")
+    parser.add_argument("--model_path", type=str, default="models/zero_y_reset_coef6_speed8_contact3_tilt10_q5_x5_epoch4_clip.zip", help="Path to the model .zip file")
     parser.add_argument("--timesteps", type=int, default=100000, help="Additional timesteps to train")
 
     args = parser.parse_args()

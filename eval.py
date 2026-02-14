@@ -5,7 +5,7 @@ import time
 env = BaseWalkEnv(use_gui=True)  # uruchamia p.connect() i GUI wewnętrznie
 obs = env.reset()
 7
-model = PPO.load("models/zero_y_reset_coef6_speed8_contact3_tilt10_q5_x.zip")
+model = PPO.load("models/golden_baseline copy.zip")
 
 for _ in range(1000):
     action, _ = model.predict(obs,deterministic=False)    

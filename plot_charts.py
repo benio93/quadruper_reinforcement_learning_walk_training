@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # ======================
 # CONFIG – edit only this
 # ======================
-CSV_PATH = "logs/metrics_run_001.csv"
+CSV_PATH = "logs/metrics_run_006.csv"
 OUTPUT_DIR = "logs copy"
 MOVING_AVERAGE_WINDOW = 20
 # ======================
